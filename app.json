@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/selectCard/select",
+    "pages/resultPage/result"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "每日一抽",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#333"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

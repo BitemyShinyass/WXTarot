@@ -1,0 +1,28 @@
+<!--pages/card/card.wxml-->
+<view class="tarot">                                                                              
+  <!-- <text>心中想着要问的事，然后抽牌</text> -->
+
+  <!-- 生成图片，隐藏原始素材 -->
+  <view class="page" hidden="{{!canvasHidden}}">
+    <view class="card">
+      <image wx:for="{{cardList}}" bindtap="imgPreview"
+      data-list="{{cardList}}" data-name="{{item.name}}"
+      data-cardtype="1" 
+      class="img" wx:if="{{cardType === '1'}}"   
+      src="http://www.tarot5.cn/photo/tarotphoto/177/{{item.name}}.jpg"
+      mode="aspectFill" style="zoom:200%;"></image>
+
+      <block wx:if="{{isPick === 0}}">      
+        <image class="img" wx:if="{{cardType === '1'}}" src="http://img04.taobaocdn.com/imgextra/i4/55214675/TB21qcFbVXXXXX6XXXXXXXXXXXX_!!55214675.jpg_480x480.jpg" mode="aspectFill" style="zoom:200%"></image>
+      </block>
+    </view>
+
+    <view class="draw">
+      <button type="primary" size="mini" loading="{{btnLoading}}" disabled="{{btnDisabled}}" 
+        bindtap="onPick" hover-class="button-hover">
+        {{actionName}}
+      </button>
+    </view>
+  </view>
+</view>
+<button hidden="{{canvasHidden}}" bindtap="onHidden" class="cancelbtn" type="primary" size="mini">返回</button>
